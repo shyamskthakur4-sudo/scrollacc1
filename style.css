@@ -988,14 +988,14 @@ body.is-scrolling .lux-floating-card {
 .input-field select,
 .input-field textarea {
   width: 100%;
+  padding: 14px 16px;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(201, 162, 74, 0.4);
+  border-radius: 6px;
+  color: #FFFFFF;
   font-family: var(--font-sans);
-  font-size: 0.92rem;
-  padding: 13px 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  background-color: rgba(45, 28, 16, 0.75);
-  color: var(--text-headline);
-  transition: all 0.2s ease;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .input-field input:focus,
@@ -1003,34 +1003,31 @@ body.is-scrolling .lux-floating-card {
 .input-field textarea:focus {
   outline: none;
   border-color: var(--gold-accent);
-  
+  background: rgba(10, 10, 10, 0.9);
+  box-shadow: 0 0 12px rgba(201, 162, 74, 0.2);
 }
 
 .btn-submit-wa {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: var(--color-walnut); /* Exact #533824 */
-  color: var(--text-headline);
-  border: 1.5px solid var(--gold-accent);
+  padding: 16px;
+  background: linear-gradient(135deg, #dfba73 0%, #9e7423 100%);
+  border: none;
+  border-radius: 8px;
+  color: #1A1A1A;
   font-family: var(--font-sans);
-  font-size: 1rem;
   font-weight: 700;
-  padding: 16px 26px;
-  border-radius: 14px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
   cursor: pointer;
-  
-  transition: all 0.25s ease;
-  margin-top: 10px;
+  transition: all 0.3s ease;
 }
 
 .btn-submit-wa:hover {
-  background: var(--color-walnut-light);
-  border-color: var(--text-headline);
   transform: translateY(-2px);
-  
+  box-shadow: 0 8px 20px rgba(201, 162, 74, 0.3);
 }
 
 .wa-icon-btn {
@@ -1632,12 +1629,34 @@ body.is-scrolling .lux-floating-card {
   .service-item-icon svg { width: 14px; height: 14px; }
   .pillar-num-badge { padding: 2px 6px; font-size: 0.85rem; }
   
-  .hero-technical-ledger, .direct-phone-bar, .input-field input, .input-field select, .input-field textarea {
-    background-color: #F5F1E8;
-  }
+  .hero-technical-ledger, .direct-phone-bar, .input-field input,
+.input-field select,
+.input-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(201, 162, 74, 0.4);
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
   .input-duo { gap: 8px; }
   .input-field { margin-bottom: 8px; }
-  .input-field input, .input-field select, .input-field textarea { padding: 8px 10px; font-size: 0.85rem; }
+  .input-field input,
+.input-field select,
+.input-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(201, 162, 74, 0.4);
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
   
   .certificate-section {
     padding: 40px 16px;
@@ -1668,4 +1687,18 @@ body.is-scrolling .lux-floating-card {
     flex-direction: column;
     text-align: center;
   }
+}
+
+.input-field input::placeholder, .input-field textarea::placeholder { color: rgba(255,255,255,0.4); }
+
+#projects-showcase .section-kicker, 
+#certificate .section-kicker,
+#projects-showcase .card-lead,
+#certificate .card-lead,
+.projects-header .section-kicker,
+.certificate-container .section-kicker,
+.projects-header .card-lead,
+.certificate-container .card-lead,
+.certificate-section .card-heading {
+  color: #1A1A1A !important;
 }
