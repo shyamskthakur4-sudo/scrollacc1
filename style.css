@@ -1536,8 +1536,17 @@ body.is-scrolling .lux-floating-card {
   .desktop-nav {
     display: none;
   }
-  .btn-header-call span {
+  .btn-header-call span,
+  .btn-header-wa span {
     display: none;
+  }
+  .btn-header-call,
+  .btn-header-wa {
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
   }
   .site-header {
     padding: 10px 16px;
