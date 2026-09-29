@@ -366,40 +366,40 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
           {/* Airy Radial Vignette for Editorial Contrast (No Muddy Overlays) */}
           <div className="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(250,249,246,0.15)_0%,rgba(250,249,246,0.5)_100%)]" />
 
-          {/* Scrolly Container Layer */}
-          <div className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center p-6 md:p-12">
+          {/* Scrolly Container Layer: Guaranteed Safe Viewport Clearance */}
+          <div className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center pt-20 pb-6 px-4 md:px-8">
 
             {/* ----------------------------------------------------------------
-                SECTION 1: HERO (0% - 20%) — MASSIVE BOLD EDITORIAL TYPOGRAPHY
+                SECTION 1: HERO (0% - 20%) — PROPORTIONED MASSIVE EDITORIAL TYPOGRAPHY
                 ---------------------------------------------------------------- */}
-            <div className={`absolute inset-0 flex items-center justify-center p-6 transition-all duration-700 ${
+            <div className={`absolute inset-0 flex items-center justify-center p-4 md:p-6 transition-all duration-700 ${
               activeSection === 'hero' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
             }`}>
-              <div className="max-w-4xl w-full text-center flex flex-col items-center pt-16">
+              <div className="max-w-3xl w-full text-center flex flex-col items-center my-auto">
                 
-                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-white/85 backdrop-blur-md border border-black/[0.08] rounded-full shadow-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/85 backdrop-blur-md border border-black/[0.08] rounded-full shadow-sm mb-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#B38F48]" />
-                  <span className="text-[11px] font-bold tracking-[0.25em] text-[#111111] uppercase">ARCHITECTURAL EXCELLENCE • EST. 2011 • GUNA</span>
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#111111] uppercase">ARCHITECTURAL EXCELLENCE • EST. 2011 • GUNA</span>
                 </div>
 
-                <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#111111] leading-[1.05] mb-6">
+                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#111111] leading-[1.1] mb-3">
                   <span className="block">Engineered With</span>
                   <span className="block italic font-normal text-[#1A1A1E]">Precision.</span>
                   <span className="block text-[#B38F48]">Anchored In Trust.</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-[#2C2C30] max-w-xl mx-auto leading-relaxed mb-8">
+                <p className="text-xs sm:text-sm md:text-base text-[#2C2C30] max-w-lg mx-auto leading-relaxed mb-4">
                   Arpit Construction Company crafts landmark private residences, bespoke villas, and commercial complexes across Madhya Pradesh — defined by seismic structural engineering, material purity, and generational permanence.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center gap-4 mb-10">
+                <div className="flex flex-col sm:flex-row items-center gap-3 mb-5">
                   <button
                     onClick={() => scrollToTarget('inquiry')}
-                    className="flex items-center gap-3.5 pl-6 pr-2 py-2 bg-[#111111] text-white rounded-full font-semibold text-sm shadow-lg hover:bg-black hover:scale-[1.02] transition-all"
+                    className="flex items-center gap-3 pl-5 pr-1.5 py-1.5 bg-[#111111] text-white rounded-full font-semibold text-xs sm:text-sm shadow-md hover:bg-black hover:scale-[1.02] transition-all"
                   >
                     <span>Commission Your Project</span>
-                    <div className="w-9 h-9 rounded-full bg-[#B38F48] flex items-center justify-center text-white">
-                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#B38F48] flex items-center justify-center text-white">
+                      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
                     </div>
@@ -407,31 +407,31 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
 
                   <button
                     onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}`, '_blank')}
-                    className="flex items-center gap-2.5 px-6 py-3 bg-white/85 backdrop-blur-md border border-black/[0.08] rounded-full font-semibold text-sm text-[#111111] shadow-sm hover:bg-white hover:border-[#B38F48] transition-all"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-white/85 backdrop-blur-md border border-black/[0.08] rounded-full font-semibold text-xs sm:text-sm text-[#111111] shadow-sm hover:bg-white hover:border-[#B38F48] transition-all"
                   >
-                    <svg className="w-4 h-4 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
+                    <svg className="w-3.5 h-3.5 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
                     </svg>
                     <span>Direct WhatsApp</span>
                   </button>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 px-6 py-4 bg-white/85 backdrop-blur-xl border border-black/[0.08] rounded-2xl shadow-sm">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 px-5 py-2.5 bg-white/85 backdrop-blur-xl border border-black/[0.08] rounded-xl shadow-sm">
                   <div>
-                    <span className="block font-serif font-bold text-2xl text-[#111111]">15+</span>
-                    <span className="text-[10px] tracking-wider uppercase text-[#64646C]">Years Legacy</span>
+                    <span className="block font-serif font-bold text-xl text-[#111111]">15+</span>
+                    <span className="text-[9px] tracking-wider uppercase text-[#64646C]">Years Legacy</span>
                   </div>
                   <div>
-                    <span className="block font-serif font-bold text-2xl text-[#111111]">250+</span>
-                    <span className="text-[10px] tracking-wider uppercase text-[#64646C]">Built Estates</span>
+                    <span className="block font-serif font-bold text-xl text-[#111111]">250+</span>
+                    <span className="text-[9px] tracking-wider uppercase text-[#64646C]">Built Estates</span>
                   </div>
                   <div>
-                    <span className="block font-serif font-bold text-2xl text-[#111111]">M30</span>
-                    <span className="text-[10px] tracking-wider uppercase text-[#64646C]">Seismic Grade</span>
+                    <span className="block font-serif font-bold text-xl text-[#111111]">M30</span>
+                    <span className="text-[9px] tracking-wider uppercase text-[#64646C]">Seismic Grade</span>
                   </div>
                   <div>
-                    <span className="block font-serif font-bold text-2xl text-[#111111]">100%</span>
-                    <span className="text-[10px] tracking-wider uppercase text-[#64646C]">On-Time Sanctions</span>
+                    <span className="block font-serif font-bold text-xl text-[#111111]">100%</span>
+                    <span className="text-[9px] tracking-wider uppercase text-[#64646C]">On-Time Sanctions</span>
                   </div>
                 </div>
 
@@ -439,39 +439,39 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
             </div>
 
             {/* ----------------------------------------------------------------
-                SECTION 2: PILLARS (24% - 46%) — ASYMMETRICAL VERTICAL FLOW (NO 2x2 GRID!)
+                SECTION 2: PILLARS (24% - 46%) — 2x2 STREAM (ZERO OVERLAP!)
                 ---------------------------------------------------------------- */}
-            <div className={`absolute inset-0 flex items-center justify-center p-6 md:p-12 transition-all duration-700 ${
+            <div className={`absolute inset-0 flex items-center justify-center p-4 md:p-8 transition-all duration-700 ${
               activeSection === 'pillars' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
             }`}>
-              <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-8 lg:gap-14 items-start">
+              <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-[1fr_1.45fr] gap-5 lg:gap-8 items-center my-auto">
                 
                 {/* Left Anchored Editorial Narrative */}
-                <div className="bg-white/90 backdrop-blur-2xl border border-black/[0.08] p-8 md:p-10 rounded-3xl shadow-[0_24px_60px_rgba(0,0,0,0.08)]">
-                  <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#8C6D3B] uppercase mb-4">
+                <div className="bg-white/90 backdrop-blur-2xl border border-black/[0.08] p-6 md:p-7 rounded-2xl shadow-sm">
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] text-[#8C6D3B] uppercase mb-2">
                     <span className="text-[#B38F48] font-serif text-sm">02</span>
                     <span>/</span>
                     <span>CORE PHILOSOPHY</span>
                   </div>
                   
-                  <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-tight mb-5">
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#111111] leading-tight mb-3">
                     The Principles of <br/><span className="italic font-normal text-[#B38F48]">Permanent</span> Architecture.
                   </h2>
 
-                  <p className="text-sm md:text-base text-[#64646C] leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[#64646C] leading-relaxed mb-4">
                     We reject compromises in civil integrity, material provenance, and spatial clarity. Every column poured and foundation anchored represents our scientific dedication to generational permanence.
                   </p>
 
-                  <div className="border-t border-black/10 pt-5">
-                    <div className="w-8 h-0.5 bg-[#B38F48] mb-3" />
-                    <p className="font-serif text-xs font-semibold tracking-wider text-[#111111]">
+                  <div className="border-t border-black/10 pt-3">
+                    <div className="w-6 h-0.5 bg-[#B38F48] mb-2" />
+                    <p className="font-serif text-[11px] font-semibold tracking-wider text-[#111111]">
                       "WE BUILD MORE THAN STRUCTURES. WE BUILD TRUST."
                     </p>
                   </div>
                 </div>
 
-                {/* Right Asymmetrical Flow (NO BOXES, NO BORDERS, PURE BREATHABLE TYPOGRAPHY) */}
-                <div className="flex flex-col gap-4">
+                {/* Right 2x2 Grid Stream */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
                     {
                       num: '01',
@@ -496,19 +496,17 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
                   ].map((pillar) => (
                     <div 
                       key={pillar.num}
-                      className="group grid grid-cols-[60px_1fr] sm:grid-cols-[70px_1fr] gap-5 p-6 bg-white/85 backdrop-blur-xl border border-black/[0.08] rounded-2xl shadow-sm hover:bg-white hover:border-[#B38F48]/40 hover:shadow-md hover:translate-x-2 transition-all duration-300"
+                      className="group p-4 bg-white/85 backdrop-blur-xl border border-black/[0.08] rounded-xl shadow-sm hover:bg-white hover:border-[#B38F48]/40 hover:shadow-md transition-all duration-300"
                     >
-                      <span className="font-serif text-3xl sm:text-4xl font-light text-[#B38F48] leading-none">
+                      <span className="font-serif text-2xl font-light text-[#B38F48] leading-none mb-1 block">
                         {pillar.num}
                       </span>
-                      <div>
-                        <h3 className="font-serif text-lg font-bold text-[#111111] mb-1.5">
-                          {pillar.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm text-[#64646C] leading-relaxed">
-                          {pillar.desc}
-                        </p>
-                      </div>
+                      <h3 className="font-serif text-sm font-bold text-[#111111] mb-1">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-[11px] text-[#64646C] leading-snug">
+                        {pillar.desc}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -517,73 +515,73 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
             </div>
 
             {/* ----------------------------------------------------------------
-                SECTION 3: SERVICES (49% - 70%) — TYPOGRAPHIC DISCIPLINES
+                SECTION 3: SERVICES (49% - 70%) — 2x2 DISCIPLINES
                 ---------------------------------------------------------------- */}
-            <div className={`absolute inset-0 flex items-center justify-center p-6 md:p-12 transition-all duration-700 ${
+            <div className={`absolute inset-0 flex items-center justify-center p-4 md:p-8 transition-all duration-700 ${
               activeSection === 'services' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
             }`}>
-              <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-[1fr_1.35fr] gap-8 lg:gap-14 items-start">
+              <div className="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-[1fr_1.45fr] gap-5 lg:gap-8 items-center my-auto">
                 
-                <div className="bg-white/90 backdrop-blur-2xl border border-black/[0.08] p-8 md:p-10 rounded-3xl shadow-[0_24px_60px_rgba(0,0,0,0.08)]">
-                  <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#8C6D3B] uppercase mb-4">
+                <div className="bg-white/90 backdrop-blur-2xl border border-black/[0.08] p-6 md:p-7 rounded-2xl shadow-sm">
+                  <div className="flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] text-[#8C6D3B] uppercase mb-2">
                     <span className="text-[#B38F48] font-serif text-sm">03</span>
                     <span>/</span>
                     <span>DISCIPLINES</span>
                   </div>
                   
-                  <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#111111] leading-tight mb-5">
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#111111] leading-tight mb-3">
                     End-to-End <br/><span className="italic font-normal text-[#B38F48]">Turnkey</span> Solutions.
                   </h2>
 
-                  <p className="text-sm md:text-base text-[#64646C] leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[#64646C] leading-relaxed mb-4">
                     From Greenfield land surveying and structural blueprint engineering to bespoke interior millwork, our multidisciplinary team coordinates every phase of execution.
                   </p>
 
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B38F48]/10 rounded-full text-xs font-semibold text-[#8C6D3B]">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#B38F48]/10 rounded-full text-[11px] font-semibold text-[#8C6D3B]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#B38F48]" />
-                    <span>Direct Site Supervision by Senior Civil Engineers</span>
+                    <span>Direct Supervision by Senior Civil Engineers</span>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {[
                     {
                       idx: '01',
                       name: 'Luxury Residential Villas',
                       desc: 'Custom multi-level modern duplexes, contemporary farmhouses, and private gated residences tailored to your lifestyle and architectural aspirations.',
-                      tags: ['Turnkey Civil', 'Cantilevered Spans', 'Vaastu Compliant'],
+                      tags: ['Turnkey Civil', 'Cantilevered Spans', 'Vaastu'],
                     },
                     {
                       idx: '02',
                       name: 'Commercial Hubs & Showrooms',
                       desc: 'Multi-story shopping complexes, high-load retail showrooms, and corporate headquarters engineered for heavy footfall and iconic roadside presence.',
-                      tags: ['Heavy Column Spacing', 'Curtain Walls', 'Fire Safety'],
+                      tags: ['Heavy Spans', 'Curtain Walls', 'Fire Safety'],
                     },
                     {
                       idx: '03',
                       name: 'Architectural 3D BIM & Elevations',
                       desc: 'Photorealistic spatial walkthroughs, comprehensive structural engineering blueprints, load calculations, and municipal sanction documentation.',
-                      tags: ['3D Walkthrough', 'Structural CAD', 'Government Sanctions'],
+                      tags: ['3D Walkthrough', 'Structural CAD', 'Sanctions'],
                     },
                     {
                       idx: '04',
                       name: 'Interiors & Structural Restoration',
                       desc: 'Imported Italian marble flooring, bespoke acoustic woodwork, architectural lighting layouts, and complete structural modernizations.',
-                      tags: ['Italian Marble', 'False Ceilings', 'Acoustic Joinery'],
+                      tags: ['Italian Marble', 'False Ceilings', 'Joinery'],
                     },
                   ].map((service) => (
                     <div 
                       key={service.idx}
-                      className="group p-6 bg-white/85 backdrop-blur-xl border border-black/[0.08] rounded-2xl shadow-sm hover:bg-white hover:border-[#B38F48]/40 hover:shadow-md hover:translate-x-2 transition-all duration-300"
+                      className="group p-4 bg-white/85 backdrop-blur-xl border border-black/[0.08] rounded-xl shadow-sm hover:bg-white hover:border-[#B38F48]/40 hover:shadow-md transition-all duration-300"
                     >
-                      <div className="flex items-baseline gap-3 mb-2">
-                        <span className="font-serif font-bold text-sm text-[#B38F48]">{service.idx}</span>
-                        <h3 className="font-serif text-lg font-bold text-[#111111]">{service.name}</h3>
+                      <div className="flex items-baseline gap-2 mb-1">
+                        <span className="font-serif font-bold text-xs text-[#B38F48]">{service.idx}</span>
+                        <h3 className="font-serif text-sm font-bold text-[#111111]">{service.name}</h3>
                       </div>
-                      <p className="text-xs sm:text-sm text-[#64646C] leading-relaxed mb-3">{service.desc}</p>
-                      <div className="flex flex-wrap gap-2">
+                      <p className="text-[11px] text-[#64646C] leading-snug mb-2">{service.desc}</p>
+                      <div className="flex flex-wrap gap-1.5">
                         {service.tags.map((tag) => (
-                          <span key={tag} className="px-2.5 py-0.5 bg-black/[0.04] border border-black/[0.05] rounded-full text-[11px] font-medium text-[#64646C]">
+                          <span key={tag} className="px-2 py-0.5 bg-black/[0.04] border border-black/[0.05] rounded-full text-[9px] font-medium text-[#64646C]">
                             {tag}
                           </span>
                         ))}
@@ -667,26 +665,26 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
             {/* ----------------------------------------------------------------
                 SECTION 5: INQUIRY (88% - 100%) — ALABASTER CONSULTATION SUITE
                 ---------------------------------------------------------------- */}
-            <div className={`absolute inset-0 flex items-center justify-center p-6 md:p-12 transition-all duration-700 ${
+            <div className={`absolute inset-0 flex items-center justify-center p-4 md:p-6 transition-all duration-700 ${
               activeSection === 'inquiry' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'
             }`}>
-              <div className="max-w-2xl w-full bg-[#FDFDFA]/95 backdrop-blur-2xl border border-black/[0.08] p-8 md:p-12 rounded-3xl shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
+              <div className="max-w-xl w-full bg-[#FDFDFA]/95 backdrop-blur-2xl border border-black/[0.08] p-5 md:p-7 rounded-2xl shadow-sm my-auto max-h-[calc(100vh-100px)] overflow-y-auto">
                 
-                <div className="mb-6 text-center">
-                  <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#8C6D3B] uppercase mb-2">
+                <div className="mb-4 text-center">
+                  <div className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.2em] text-[#8C6D3B] uppercase mb-1">
                     <span className="text-[#B38F48] font-serif text-sm">05</span>
                     <span>/</span>
                     <span>COMMISSION & CONSULTATION</span>
                   </div>
-                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#111111] mb-2">
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#111111] mb-1">
                     Ready To Build Your Landmark?
                   </h2>
-                  <p className="text-xs sm:text-sm text-[#64646C]">
-                    Submit your parameters below. Our system will generate a verified project brief routed directly to our Principal Engineer on WhatsApp (<strong className="text-[#111111]">+91 7879531920</strong>).
+                  <p className="text-xs text-[#64646C]">
+                    Submit parameters to route an official project brief directly to our Principal Engineer on WhatsApp (<strong className="text-[#111111]">+91 7879531920</strong>).
                   </p>
                 </div>
 
-                <form onSubmit={handleInquirySubmit} className="space-y-4">
+                <form onSubmit={handleInquirySubmit} className="space-y-3">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-[#111111] mb-1.5">
@@ -711,7 +709,7 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="e.g. 7879531920"
-                        className="w-full px-3.5 py-2.5 bg-white border border-black/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
+                        className="w-full px-3 py-2 bg-white border border-black/10 rounded-xl text-xs sm:text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
                       />
                     </div>
                   </div>
@@ -724,7 +722,7 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
                       <select
                         value={formData.type}
                         onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                        className="w-full px-3.5 py-2.5 bg-white border border-black/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
+                        className="w-full px-3 py-2 bg-white border border-black/10 rounded-xl text-xs sm:text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
                       >
                         <option value="Luxury Residential Villa">Luxury Residential Villa Construction</option>
                         <option value="Commercial Complex / Showroom">Commercial Complex / Showroom</option>
@@ -742,7 +740,7 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
                         value={formData.area}
                         onChange={(e) => setFormData({ ...formData, area: e.target.value })}
                         placeholder="e.g. 2,400 Sq.Ft / 30x50 plot"
-                        className="w-full px-3.5 py-2.5 bg-white border border-black/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
+                        className="w-full px-3 py-2 bg-white border border-black/10 rounded-xl text-xs sm:text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
                       />
                     </div>
                   </div>
@@ -756,7 +754,7 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                       placeholder="e.g. Cantt Road, Guna / Nearby"
-                      className="w-full px-3.5 py-2.5 bg-white border border-black/10 rounded-xl text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
+                      className="w-full px-3 py-2 bg-white border border-black/10 rounded-xl text-xs sm:text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
                     />
                   </div>
 
