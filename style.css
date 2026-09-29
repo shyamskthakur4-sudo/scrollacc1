@@ -376,10 +376,7 @@ body {
 }
 
 /* Zero-Lag Engine: While user is actively scrolling, bypass expensive GPU Gaussian blur sampling */
-body.is-scrolling .lux-floating-card {
-  
-  -webkit-
-}
+
 
 /* Left vertical metallic gold indicator accent */
 .lux-floating-card::before {
@@ -1710,4 +1707,48 @@ body.is-scrolling .lux-floating-card {
 .certificate-container .card-lead,
 .certificate-section .card-heading {
   color: #1A1A1A !important;
+}
+
+/* Mobile Inquiry Form Overrides to fit on screen */
+@media (max-width: 768px) {
+  #section-inquiry .lux-floating-card {
+    padding: 15px 12px;
+    margin-top: -10px;
+  }
+  #section-inquiry .card-heading {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  #section-inquiry .card-lead {
+    display: none; /* Hide paragraph to save space */
+  }
+  #section-inquiry .direct-phone-bar {
+    display: none; /* Hide secondary phone bar to save space */
+  }
+  .inquiry-compact-form .input-field {
+    margin-bottom: 6px;
+  }
+  .inquiry-compact-form .input-field label {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+  .inquiry-compact-form .input-field input,
+  .inquiry-compact-form .input-field select,
+  .inquiry-compact-form .input-field textarea {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  .inquiry-compact-form .input-duo {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+  .inquiry-compact-form .input-duo .input-field {
+    flex: 1;
+  }
+  #btn-submit-inquiry {
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
 }
