@@ -1751,3 +1751,45 @@ body {
     margin-top: 5px;
   }
 }
+\n
+/* Inquiry Form Height Constraints for Desktop & Laptops */
+#section-inquiry {
+  padding-top: max(80px, 10vh); /* Slightly higher up */
+}
+#section-inquiry .lux-floating-card {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 30px 40px; /* Reduced padding to fit more content naturally */
+}
+#section-inquiry .card-heading {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+#section-inquiry .card-lead {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+.inquiry-compact-form .input-field {
+  margin-bottom: 12px;
+}
+.inquiry-compact-form .input-field input,
+.inquiry-compact-form .input-field select,
+.inquiry-compact-form .input-field textarea {
+  padding: 10px 14px;
+}
+#btn-submit-inquiry {
+  margin-top: 10px;
+}
+
+/* Custom scrollbar for the card */
+#section-inquiry .lux-floating-card::-webkit-scrollbar {
+  width: 6px;
+}
+#section-inquiry .lux-floating-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+#section-inquiry .lux-floating-card::-webkit-scrollbar-thumb {
+  background: var(--gold-accent);
+  border-radius: 4px;
+}
