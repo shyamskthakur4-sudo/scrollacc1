@@ -504,39 +504,337 @@
   </main>
 
   <!-- ==========================================================================
-       SECTION: SIGNATURE DEVELOPMENTS (HORIZONTAL GALLERY)
+       SECTION: ARCHITECTURAL WORKS EXHIBITION (REBUILT LUXURY SHOWCASE)
        ========================================================================== -->
   <section class="projects-editorial-section" id="projects-showcase">
-    <div class="editorial-container text-center">
-      <div class="editorial-meta-tag centered">
-        <span class="meta-index">06</span>
-        <span class="meta-slash">/</span>
-        <span class="meta-title">INTERIOR & SPATIAL MASTERPIECES</span>
+    <div class="editorial-container">
+      
+      <!-- Section Header with Editorial Meta & Carousel Controls -->
+      <div class="projects-section-header">
+        <div class="header-left">
+          <div class="editorial-meta-tag">
+            <span class="meta-index">06</span>
+            <span class="meta-slash">/</span>
+            <span class="meta-title">BUILT ARCHITECTURAL MASTERPIECES</span>
+          </div>
+          <h2 class="editorial-section-title">
+            Signature Works & <br><span class="italic-title">Bespoke</span> Sanctuaries.
+          </h2>
+          <p class="editorial-section-lead" style="max-width: 600px; margin-bottom: 0;">
+            A curated exhibition of landmark private villas, royal living halls, biomimetic sanctuaries, and sky-penthouses crafted across Madhya Pradesh.
+          </p>
+        </div>
+
+        <!-- Carousel Navigation Controls -->
+        <div class="projects-carousel-controls">
+          <button class="carousel-nav-btn prev-btn" id="project-prev-btn" aria-label="Previous Project" title="Previous Project">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <div class="carousel-counter">
+            <span id="project-current-index" class="counter-current">01</span>
+            <span class="counter-sep">/</span>
+            <span class="counter-total">05</span>
+          </div>
+          <button class="carousel-nav-btn next-btn" id="project-next-btn" aria-label="Next Project" title="Next Project">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
       </div>
-      <h2 class="editorial-section-title centered">Signature Craftsmanship</h2>
-      <p class="editorial-section-lead centered" style="max-width: 640px; margin: 0 auto 36px;">
-        A visual portfolio of custom millwork, Italian marble execution, and double-height architectural volumes designed for discerning clients.
-      </p>
-    </div>
-    
-    <div class="projects-horizontal-track" id="projects-track">
-      <div class="project-horizontal-card">
-        <img src="assets/project1.jpg" alt="Luxury Architectural Interior Project 1" loading="lazy">
+
+      <!-- Category Filter Pills -->
+      <div class="projects-filter-bar">
+        <button class="project-filter-pill active" data-filter="all">All Landmarks (5)</button>
+        <button class="project-filter-pill" data-filter="villas">Bespoke Villas</button>
+        <button class="project-filter-pill" data-filter="royal">Royal Heritage</button>
+        <button class="project-filter-pill" data-filter="sculptural">Parametric & Sculptural</button>
+        <button class="project-filter-pill" data-filter="penthouse">Penthouses</button>
       </div>
-      <div class="project-horizontal-card">
-        <img src="assets/project2.jpg" alt="Luxury Architectural Interior Project 2" loading="lazy">
+
+      <!-- Rich Exhibition Cards Track -->
+      <div class="projects-horizontal-track" id="projects-track">
+        
+        <!-- Project 1 -->
+        <article class="project-exhibition-card" data-category="villas" data-id="1">
+          <div class="card-media-wrapper">
+            <img src="assets/project1.jpg" alt="The Arboreal Canopy Residence" class="project-card-image" loading="lazy">
+            <div class="card-floating-badge top-left">BESPOKE VILLA</div>
+            <div class="card-floating-badge top-right">5,400 SQ.FT</div>
+            <div class="card-hover-overlay">
+              <span class="btn-inspect-pill">
+                <span>Inspect Dossier</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <div class="card-meta-row">
+              <span class="card-idx">01 / ARBOREAL CANOPY</span>
+              <span class="card-location">Cantt Road, Guna</span>
+            </div>
+            <h3 class="card-title">The Arboreal Canopy Residence</h3>
+            <p class="card-narrative">
+              Hand-sculpted solid white oak ceiling integration with 2700K ambient cove illumination and seamless panoramic glass terrace apertures.
+            </p>
+            <div class="card-materials-chips">
+              <span>White Oak</span>
+              <span>2700K Cove Lighting</span>
+              <span>Italian Travertine</span>
+            </div>
+            <div class="card-actions-bar">
+              <button class="btn-card-inspect" data-project="1">
+                <span>View Full Specifications</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <a href="https://wa.me/917879531920?text=Hello%20Arpit%20Construction,%20I%20am%20interested%20in%20The%20Arboreal%20Canopy%20Residence%20design." target="_blank" class="card-wa-icon-link" title="Chat about this project on WhatsApp" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-exhibition-card" data-category="royal" data-id="2">
+          <div class="card-media-wrapper">
+            <img src="assets/project2.jpg" alt="The Imperial Sovereign Hall" class="project-card-image" loading="lazy">
+            <div class="card-floating-badge top-left">ROYAL HERITAGE</div>
+            <div class="card-floating-badge top-right">12,000 SQ.FT</div>
+            <div class="card-hover-overlay">
+              <span class="btn-inspect-pill">
+                <span>Inspect Dossier</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <div class="card-meta-row">
+              <span class="card-idx">02 / IMPERIAL HALL</span>
+              <span class="card-location">Civil Lines, Guna</span>
+            </div>
+            <h3 class="card-title">The Imperial Sovereign Hall</h3>
+            <p class="card-narrative">
+              Classical coffered teakwood ceiling with gold filigree accents, crystal chandelier suspension, and mirror-polished Italian Statuario marble.
+            </p>
+            <div class="card-materials-chips">
+              <span>Burmese Teak</span>
+              <span>24K Gold Filigree</span>
+              <span>Statuario Marble</span>
+            </div>
+            <div class="card-actions-bar">
+              <button class="btn-card-inspect" data-project="2">
+                <span>View Full Specifications</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <a href="https://wa.me/917879531920?text=Hello%20Arpit%20Construction,%20I%20am%20interested%20in%20The%20Imperial%20Sovereign%20Hall%20design." target="_blank" class="card-wa-icon-link" title="Chat about this project on WhatsApp" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-exhibition-card" data-category="sculptural" data-id="3">
+          <div class="card-media-wrapper">
+            <img src="assets/project3.jpg" alt="The Parametric Limestone Cavern" class="project-card-image" loading="lazy">
+            <div class="card-floating-badge top-left">PARAMETRIC BIOMIMETIC</div>
+            <div class="card-floating-badge top-right">4,200 SQ.FT</div>
+            <div class="card-hover-overlay">
+              <span class="btn-inspect-pill">
+                <span>Inspect Dossier</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <div class="card-meta-row">
+              <span class="card-idx">03 / LIMESTONE CAVERN</span>
+              <span class="card-location">Mayur Van, Guna</span>
+            </div>
+            <h3 class="card-title">The Parametric Limestone Cavern</h3>
+            <p class="card-narrative">
+              Avant-garde parametric cellular ceiling with sculpted natural skylight apertures, acoustic micro-plaster, and hidden linear edge backlights.
+            </p>
+            <div class="card-materials-chips">
+              <span>Limestone Plaster</span>
+              <span>Acoustic Baffles</span>
+              <span>Indirect Skylights</span>
+            </div>
+            <div class="card-actions-bar">
+              <button class="btn-card-inspect" data-project="3">
+                <span>View Full Specifications</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <a href="https://wa.me/917879531920?text=Hello%20Arpit%20Construction,%20I%20am%20interested%20in%20The%20Parametric%20Limestone%20Cavern%20design." target="_blank" class="card-wa-icon-link" title="Chat about this project on WhatsApp" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-exhibition-card" data-category="sculptural" data-id="4">
+          <div class="card-media-wrapper">
+            <img src="assets/project4.jpg" alt="The Adobe Sanctuary Villa" class="project-card-image" loading="lazy">
+            <div class="card-floating-badge top-left">EARTHEN RELIEF VILLA</div>
+            <div class="card-floating-badge top-right">6,800 SQ.FT</div>
+            <div class="card-hover-overlay">
+              <span class="btn-inspect-pill">
+                <span>Inspect Dossier</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <div class="card-meta-row">
+              <span class="card-idx">04 / ADOBE SANCTUARY</span>
+              <span class="card-location">Subhash Nagar, Guna</span>
+            </div>
+            <h3 class="card-title">The Adobe Sanctuary Villa</h3>
+            <p class="card-narrative">
+              Sculptural relief wall with hand-shaped curved adobe alcoves, concealed luminaire channels, and warm tactile earth-stucco finishes.
+            </p>
+            <div class="card-materials-chips">
+              <span>Textured Clay Stucco</span>
+              <span>Walnut Millwork</span>
+              <span>Bronze Sconces</span>
+            </div>
+            <div class="card-actions-bar">
+              <button class="btn-card-inspect" data-project="4">
+                <span>View Full Specifications</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <a href="https://wa.me/917879531920?text=Hello%20Arpit%20Construction,%20I%20am%20interested%20in%20The%20Adobe%20Sanctuary%20Villa%20design." target="_blank" class="card-wa-icon-link" title="Chat about this project on WhatsApp" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-exhibition-card" data-category="penthouse" data-id="5">
+          <div class="card-media-wrapper">
+            <img src="assets/project5.jpg" alt="The Monolith Horizon Penthouse" class="project-card-image" loading="lazy">
+            <div class="card-floating-badge top-left">HORIZON PENTHOUSE</div>
+            <div class="card-floating-badge top-right">8,500 SQ.FT</div>
+            <div class="card-hover-overlay">
+              <span class="btn-inspect-pill">
+                <span>Inspect Dossier</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <div class="card-meta-row">
+              <span class="card-idx">05 / MONOLITH HORIZON</span>
+              <span class="card-location">A.B. Road Skyline, Guna</span>
+            </div>
+            <h3 class="card-title">The Monolith Horizon Penthouse</h3>
+            <p class="card-narrative">
+              Monolithic raw stone carved sculptural aperture mirror framing the panoramic city skyline with double-height structural glass curtain walls.
+            </p>
+            <div class="card-materials-chips">
+              <span>Chiseled Raw Stone</span>
+              <span>Thermal Low-E Glass</span>
+              <span>Cast Microcement</span>
+            </div>
+            <div class="card-actions-bar">
+              <button class="btn-card-inspect" data-project="5">
+                <span>View Full Specifications</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <a href="https://wa.me/917879531920?text=Hello%20Arpit%20Construction,%20I%20am%20interested%20in%20The%20Monolith%20Horizon%20Penthouse%20design." target="_blank" class="card-wa-icon-link" title="Chat about this project on WhatsApp" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <div class="project-horizontal-card">
-        <img src="assets/project3.jpg" alt="Luxury Architectural Interior Project 3" loading="lazy">
-      </div>
-      <div class="project-horizontal-card">
-        <img src="assets/project4.jpg" alt="Luxury Architectural Interior Project 4" loading="lazy">
-      </div>
-      <div class="project-horizontal-card">
-        <img src="assets/project5.jpg" alt="Luxury Architectural Interior Project 5" loading="lazy">
-      </div>
+
     </div>
   </section>
+
+  <!-- ==========================================================================
+       ARCHITECTURAL PROJECT DOSSIER MODAL
+       ========================================================================== -->
+  <dialog class="project-dossier-modal" id="project-modal" aria-labelledby="modal-project-title">
+    <div class="modal-dialog-content">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Dossier" title="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="modal-two-col-layout">
+        <!-- Media Column -->
+        <div class="modal-media-col">
+          <div class="modal-image-wrapper">
+            <img id="modal-project-image" src="assets/project1.jpg" alt="Architectural Project Preview" class="modal-hero-img">
+          </div>
+          <div class="modal-media-caption">
+            <span id="modal-project-tag" class="caption-tag">BESPOKE RESIDENCE</span>
+            <span id="modal-project-scale" class="caption-scale">5,400 Sq.Ft &bull; Cantt Road, Guna</span>
+          </div>
+        </div>
+
+        <!-- Details & Specifications Column -->
+        <div class="modal-details-col">
+          <div class="modal-editorial-meta">
+            <span class="meta-gold-num" id="modal-project-idx">01</span>
+            <span class="meta-slash">/</span>
+            <span class="meta-discipline" id="modal-project-category">PRIVATE VILLA ARCHITECTURE</span>
+          </div>
+
+          <h2 class="modal-project-title" id="modal-project-title">The Arboreal Canopy Residence</h2>
+          <p class="modal-project-narrative" id="modal-project-narrative">
+            An extraordinary exploration of organic architectural integration: custom fluted ceiling timber joinery branching seamlessly from the headwall into a backlit sculptural canopy, framing natural sunrise light.
+          </p>
+
+          <!-- Specifications Matrix -->
+          <div class="modal-specs-matrix">
+            <div class="modal-spec-cell">
+              <span class="spec-cell-label">Location</span>
+              <strong class="spec-cell-val" id="modal-spec-location">Cantt Road, Guna (M.P.)</strong>
+            </div>
+            <div class="modal-spec-cell">
+              <span class="spec-cell-label">Built-Up Area</span>
+              <strong class="spec-cell-val" id="modal-spec-area">5,400 Sq.Ft Duplex Villa</strong>
+            </div>
+            <div class="modal-spec-cell">
+              <span class="spec-cell-label">Structural System</span>
+              <strong class="spec-cell-val" id="modal-spec-rcc">M30 Seismic-Resistant RCC</strong>
+            </div>
+            <div class="modal-spec-cell">
+              <span class="spec-cell-label">Key Materials</span>
+              <strong class="spec-cell-val" id="modal-spec-materials">White Oak, Travertine, 2700K Cove</strong>
+            </div>
+            <div class="modal-spec-cell">
+              <span class="spec-cell-label">Execution Horizon</span>
+              <strong class="spec-cell-val" id="modal-spec-timeline">14 Months (Turnkey Delivery)</strong>
+            </div>
+            <div class="modal-spec-cell">
+              <span class="spec-cell-label">Principal Engineer</span>
+              <strong class="spec-cell-val">Er. Arpit Raghuwanshi</strong>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Consultation CTA -->
+          <div class="modal-cta-row">
+            <a id="modal-wa-cta-btn" href="#" target="_blank" class="btn-modal-wa-action" rel="noopener">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+              </svg>
+              <span>Consult on WhatsApp About This Design</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </dialog>
 
   <!-- ==========================================================================
        SECTION: CERTIFIED ACCREDITATION

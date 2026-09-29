@@ -28,6 +28,112 @@ const SECTIONS: SectionRange[] = [
   { id: 'inquiry', name: 'Consultation', index: '05', start: 0.88, end: 1.00 },
 ];
 
+interface ExhibitionProject {
+  id: string;
+  idx: string;
+  category: 'villas' | 'royal' | 'sculptural' | 'penthouse';
+  badgeTag: string;
+  scale: string;
+  categoryLabel: string;
+  title: string;
+  narrative: string;
+  location: string;
+  area: string;
+  rcc: string;
+  materials: string[];
+  timeline: string;
+  img: string;
+  waText: string;
+}
+
+const EXHIBITION_PROJECTS: ExhibitionProject[] = [
+  {
+    id: '1',
+    idx: '01',
+    category: 'villas',
+    badgeTag: 'BESPOKE VILLA',
+    categoryLabel: 'PRIVATE VILLA ARCHITECTURE',
+    scale: '5,400 Sq.Ft • Cantt Road, Guna',
+    title: 'The Arboreal Canopy Residence',
+    narrative: 'Hand-sculpted solid white oak ceiling integration with 2700K ambient cove illumination and seamless panoramic glass terrace apertures.',
+    location: 'Cantt Road, Guna (M.P.)',
+    area: '5,400 Sq.Ft Duplex Villa',
+    rcc: 'M30 Seismic-Resistant RCC Framing',
+    materials: ['White Oak', '2700K Cove Lighting', 'Italian Travertine'],
+    timeline: '14 Months (Turnkey Delivery)',
+    img: '/assets/project1.jpg',
+    waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Arboreal Canopy Residence design.'
+  },
+  {
+    id: '2',
+    idx: '02',
+    category: 'royal',
+    badgeTag: 'ROYAL HERITAGE',
+    categoryLabel: 'ROYAL HERITAGE LIVING',
+    scale: '12,000 Sq.Ft • Civil Lines, Guna',
+    title: 'The Imperial Sovereign Hall',
+    narrative: 'Classical coffered teakwood ceiling with gold filigree accents, crystal chandelier suspension, and mirror-polished Italian Statuario marble.',
+    location: 'Civil Lines, Guna (M.P.)',
+    area: '12,000 Sq.Ft Heritage Estate',
+    rcc: 'Heavy-Span Columnless Post-Tensioned Slabs',
+    materials: ['Burmese Teak', '24K Gold Filigree', 'Statuario Marble'],
+    timeline: '18 Months (Turnkey Delivery)',
+    img: '/assets/project2.jpg',
+    waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Imperial Sovereign Hall design.'
+  },
+  {
+    id: '3',
+    idx: '03',
+    category: 'sculptural',
+    badgeTag: 'PARAMETRIC BIOMIMETIC',
+    categoryLabel: 'BIOMIMETIC ARCHITECTURE',
+    scale: '4,200 Sq.Ft • Mayur Van, Guna',
+    title: 'The Parametric Limestone Cavern',
+    narrative: 'Avant-garde parametric cellular ceiling with sculpted natural skylight apertures, acoustic micro-plaster, and hidden linear edge backlights.',
+    location: 'Mayur Van, Guna (M.P.)',
+    area: '4,200 Sq.Ft Sculptural Residence',
+    rcc: 'Curvilinear Shotcrete & Cantilever RCC',
+    materials: ['Limestone Plaster', 'Acoustic Baffles', 'Indirect Skylights'],
+    timeline: '16 Months (Turnkey Delivery)',
+    img: '/assets/project3.jpg',
+    waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Parametric Limestone Cavern design.'
+  },
+  {
+    id: '4',
+    idx: '04',
+    category: 'sculptural',
+    badgeTag: 'EARTHEN RELIEF VILLA',
+    categoryLabel: 'EARTHEN RELIEF ARCHITECTURE',
+    scale: '6,800 Sq.Ft • Subhash Nagar, Guna',
+    title: 'The Adobe Sanctuary Villa',
+    narrative: 'Sculptural relief wall with hand-shaped curved adobe alcoves, concealed luminaire channels, and warm tactile earth-stucco finishes.',
+    location: 'Subhash Nagar, Guna (M.P.)',
+    area: '6,800 Sq.Ft Sanctuary Villa',
+    rcc: 'Monolithic Thermal Insulated Core',
+    materials: ['Textured Clay Stucco', 'Walnut Millwork', 'Bronze Sconces'],
+    timeline: '15 Months (Turnkey Delivery)',
+    img: '/assets/project4.jpg',
+    waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Adobe Sanctuary Villa design.'
+  },
+  {
+    id: '5',
+    idx: '05',
+    category: 'penthouse',
+    badgeTag: 'HORIZON PENTHOUSE',
+    categoryLabel: 'HORIZON PENTHOUSE ARCHITECTURE',
+    scale: '8,500 Sq.Ft • A.B. Road Skyline, Guna',
+    title: 'The Monolith Horizon Penthouse',
+    narrative: 'Monolithic raw stone carved sculptural aperture mirror framing the panoramic city skyline with double-height structural glass curtain walls.',
+    location: 'A.B. Road Skyline, Guna (M.P.)',
+    area: '8,500 Sq.Ft Duplex Penthouse',
+    rcc: 'High-Rise Steel & Composite Decking',
+    materials: ['Chiseled Raw Stone', 'Thermal Low-E Glass', 'Cast Microcement'],
+    timeline: '16 Months (Turnkey Delivery)',
+    img: '/assets/project5.jpg',
+    waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Monolith Horizon Penthouse design.'
+  }
+];
+
 export default function ArchitecturalExperience() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const scrollTrackRef = useRef<HTMLDivElement | null>(null);
@@ -42,6 +148,10 @@ export default function ArchitecturalExperience() {
     message: '',
   });
   const [formFeedback, setFormFeedback] = useState<{ text: string; type: 'success' | 'error' } | null>(null);
+  const [activeProjectFilter, setActiveProjectFilter] = useState<string>('all');
+  const [currentProjectIdx, setCurrentProjectIdx] = useState<string>('01');
+  const [activeModalProject, setActiveModalProject] = useState<ExhibitionProject | null>(null);
+  const projectsTrackRef = useRef<HTMLDivElement | null>(null);
 
   // Frame Cache & Animation State Refs
   const imagesRef = useRef<(HTMLImageElement | null)[]>(new Array(TOTAL_FRAMES + 1).fill(null));
@@ -805,31 +915,278 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
       </main>
 
       {/* ======================================================================
-          4. SIGNATURE DEVELOPMENTS (HORIZONTAL GALLERY)
+          4. SIGNATURE DEVELOPMENTS (EXHIBITION GALLERY & DOSSIER MODAL)
           ====================================================================== */}
-      <section className="relative z-10 bg-[#FAF9F6] py-24 px-6 border-t border-black/[0.08]">
-        <div className="max-w-7xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#8C6D3B] uppercase mb-2">
-            <span className="text-[#B38F48] font-serif text-sm">06</span>
-            <span>/</span>
-            <span>INTERIOR MASTERPIECES</span>
-          </div>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#111111] mb-3">
-            Signature Craftsmanship
-          </h2>
-          <p className="text-sm md:text-base text-[#64646C] max-w-xl mx-auto">
-            A visual portfolio of custom millwork, Italian marble execution, and double-height architectural volumes designed for discerning clients.
-          </p>
-        </div>
-
-        <div className="flex gap-8 overflow-x-auto px-8 py-4 snap-x snap-mandatory scrollbar-none">
-          {['project1.jpg', 'project2.jpg', 'project3.jpg', 'project4.jpg', 'project5.jpg'].map((img, i) => (
-            <div key={img} className="flex-shrink-0 snap-center rounded-2xl overflow-hidden shadow-lg border border-black/10 hover:scale-[1.02] transition-transform duration-300">
-              <img src={`/assets/${img}`} alt={`Signature Project ${i + 1}`} className="max-h-[60vh] max-w-[75vw] w-auto h-auto object-cover" />
+      <section className="relative z-10 bg-[#FAF9F6] py-20 md:py-24 px-4 sm:px-6 lg:px-8 border-t border-black/[0.08]">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#8C6D3B] uppercase mb-2">
+                <span className="text-[#B38F48] font-serif text-sm">06</span>
+                <span>/</span>
+                <span>PORTFOLIO OF DISTINCTION</span>
+              </div>
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#111111] leading-tight">
+                Signature Works & <br /><span className="italic font-normal text-[#B38F48]">Bespoke</span> Sanctuaries.
+              </h2>
+              <p className="text-xs sm:text-sm text-[#64646C] max-w-xl mt-2 leading-relaxed">
+                A curated exhibition of landmark private villas, royal living halls, biomimetic sanctuaries, and sky-penthouses crafted across Madhya Pradesh.
+              </p>
             </div>
-          ))}
+
+            {/* Carousel Navigation Controls */}
+            <div className="flex items-center gap-3 self-start md:self-end">
+              <button
+                onClick={() => {
+                  if (projectsTrackRef.current) {
+                    projectsTrackRef.current.scrollBy({ left: -440, behavior: 'smooth' });
+                  }
+                }}
+                className="w-11 h-11 rounded-full border border-black/10 bg-white text-[#111111] flex items-center justify-center shadow-sm hover:border-[#B38F48] hover:text-[#B38F48] transition-all"
+                aria-label="Previous Project"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <div className="flex items-baseline gap-1 font-serif px-2">
+                <span className="text-xl font-bold text-[#B38F48]">{currentProjectIdx}</span>
+                <span className="text-xs text-[#8E8E93]">/</span>
+                <span className="text-xs font-semibold text-[#8E8E93]">05</span>
+              </div>
+              <button
+                onClick={() => {
+                  if (projectsTrackRef.current) {
+                    projectsTrackRef.current.scrollBy({ left: 440, behavior: 'smooth' });
+                  }
+                }}
+                className="w-11 h-11 rounded-full border border-black/10 bg-white text-[#111111] flex items-center justify-center shadow-sm hover:border-[#B38F48] hover:text-[#B38F48] transition-all"
+                aria-label="Next Project"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Category Filter Pills */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 scrollbar-none">
+            {[
+              { id: 'all', label: 'All Landmarks (5)' },
+              { id: 'villas', label: 'Bespoke Villas' },
+              { id: 'royal', label: 'Royal Heritage' },
+              { id: 'sculptural', label: 'Parametric & Sculptural' },
+              { id: 'penthouse', label: 'Penthouses' },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  setActiveProjectFilter(tab.id);
+                  if (projectsTrackRef.current) {
+                    projectsTrackRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+                  }
+                }}
+                className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
+                  activeProjectFilter === tab.id
+                    ? 'bg-[#111111] text-white shadow-md'
+                    : 'bg-white border border-black/10 text-[#64646C] hover:border-black/30 hover:text-[#111111]'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Exhibition Cards Horizontal Track */}
+          <div
+            ref={projectsTrackRef}
+            className="flex items-stretch gap-7 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-none"
+            onScroll={() => {
+              if (!projectsTrackRef.current) return;
+              const track = projectsTrackRef.current;
+              const scrollLeft = track.scrollLeft;
+              const cardWidth = 430;
+              const approxIdx = Math.min(Math.floor((scrollLeft + 100) / cardWidth) + 1, 5);
+              setCurrentProjectIdx(String(approxIdx).padStart(2, '0'));
+            }}
+          >
+            {EXHIBITION_PROJECTS.filter((p) => activeProjectFilter === 'all' || p.category === activeProjectFilter).map((project) => (
+              <article
+                key={project.id}
+                className="flex-shrink-0 w-[380px] sm:w-[430px] max-w-[86vw] snap-start bg-white border border-black/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:border-[#B38F48]/40 transition-all duration-400 flex flex-col group"
+              >
+                {/* Media Wrapper */}
+                <div
+                  className="relative w-full aspect-[16/11] overflow-hidden bg-neutral-900 cursor-pointer"
+                  onClick={() => setActiveModalProject(project)}
+                >
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-black/75 text-white backdrop-blur-md border border-white/20">
+                    {project.badgeTag}
+                  </div>
+                  <div className="absolute top-3.5 right-3.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/90 text-[#8C6D3B] backdrop-blur-md border border-[#B38F48]/30">
+                    {project.scale.split('•')[0].trim()}
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="px-5 py-2.5 rounded-full bg-white text-[#111111] text-xs font-bold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                      <span>Inspect Dossier</span>
+                      <svg className="w-3.5 h-3.5 text-[#B38F48]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Body */}
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-center justify-between text-[11px] mb-2 font-medium">
+                    <span className="font-bold text-[#B38F48]">{project.idx} / {project.badgeTag}</span>
+                    <span className="text-[#8E8E93]">{project.location.split('(')[0].trim()}</span>
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-[#111111] group-hover:text-[#8C6D3B] transition-colors leading-snug mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-[#64646C] leading-relaxed line-clamp-3 mb-4">
+                    {project.narrative}
+                  </p>
+
+                  {/* Materials Chips */}
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {project.materials.map((mat) => (
+                      <span key={mat} className="px-2.5 py-1 bg-[#FAF9F6] border border-black/[0.08] rounded-md text-[10px] font-medium text-[#64646C]">
+                        {mat}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Action Bar */}
+                  <div className="mt-auto pt-4 border-t border-black/[0.08] flex items-center justify-between">
+                    <button
+                      onClick={() => setActiveModalProject(project)}
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#111111] hover:text-[#B38F48] transition-colors"
+                    >
+                      <span>View Specifications</span>
+                      <svg className="w-3.5 h-3.5 text-[#B38F48]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                    <a
+                      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(project.waText)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+                      title="Consult on WhatsApp"
+                    >
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
         </div>
       </section>
+
+      {/* ======================================================================
+          ARCHITECTURAL PROJECT DOSSIER MODAL
+          ====================================================================== */}
+      {activeModalProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md">
+          <div className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-black/10 flex flex-col md:grid md:grid-cols-[1fr_1.2fr] max-h-[90vh]">
+            
+            {/* Close Button */}
+            <button
+              onClick={() => setActiveModalProject(null)}
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/90 border border-black/10 flex items-center justify-center text-[#111111] hover:rotate-90 hover:bg-[#111111] hover:text-white transition-all shadow-md"
+              aria-label="Close Dossier"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Media Column */}
+            <div className="relative h-64 md:h-auto bg-neutral-950 flex flex-col justify-end overflow-hidden">
+              <img
+                src={activeModalProject.img}
+                alt={activeModalProject.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="relative z-10 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                <span className="text-[10px] font-bold tracking-widest text-[#B38F48] uppercase block mb-1">
+                  {activeModalProject.badgeTag}
+                </span>
+                <span className="text-xs text-white/90 font-medium">
+                  {activeModalProject.scale}
+                </span>
+              </div>
+            </div>
+
+            {/* Details Column */}
+            <div className="p-6 md:p-8 flex flex-col overflow-y-auto max-h-[calc(90vh-16rem)] md:max-h-[90vh]">
+              <div className="flex items-center gap-2 mb-2 text-xs font-bold tracking-widest uppercase">
+                <span className="font-serif text-[#B38F48]">{activeModalProject.idx}</span>
+                <span className="text-[#8E8E93]">/</span>
+                <span className="text-[#8E8E93]">{activeModalProject.categoryLabel}</span>
+              </div>
+
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#111111] leading-snug mb-3">
+                {activeModalProject.title}
+              </h2>
+
+              <p className="text-xs sm:text-sm text-[#64646C] leading-relaxed mb-6">
+                {activeModalProject.narrative}
+              </p>
+
+              {/* Specs Matrix */}
+              <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-[#FAF9F6] border border-black/10 mb-6">
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#8E8E93] block">Location</span>
+                  <strong className="text-xs font-bold text-[#111111]">{activeModalProject.location}</strong>
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#8E8E93] block">Built-Up Area</span>
+                  <strong className="text-xs font-bold text-[#111111]">{activeModalProject.area}</strong>
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#8E8E93] block">Structural System</span>
+                  <strong className="text-xs font-bold text-[#111111]">{activeModalProject.rcc}</strong>
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#8E8E93] block">Timeline</span>
+                  <strong className="text-xs font-bold text-[#111111]">{activeModalProject.timeline}</strong>
+                </div>
+              </div>
+
+              {/* WhatsApp CTA */}
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(activeModalProject.waText)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto w-full py-3.5 px-6 rounded-xl bg-[#25D366] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg hover:bg-[#20bd5a] transition-all"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.163 8.163 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.31 3.8.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.6-.1 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z" />
+                </svg>
+                <span>Consult on WhatsApp About This Design</span>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+      )}
 
       {/* ======================================================================
           5. CERTIFICATE OF ACCREDITATION

@@ -427,6 +427,240 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
     revealElements.forEach(el => observer.observe(el));
   }
 
+  // Projects Exhibition Carousel, Filter & Dossier Modal Subsystem
+  function initProjectsShowcase() {
+    const track = document.getElementById('projects-track');
+    const prevBtn = document.getElementById('project-prev-btn');
+    const nextBtn = document.getElementById('project-next-btn');
+    const currentIdxEl = document.getElementById('project-current-index');
+    const filterPills = document.querySelectorAll('.project-filter-pill');
+    const cards = document.querySelectorAll('.project-exhibition-card');
+    const modal = document.getElementById('project-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+
+    if (!track) return;
+
+    const projectsData = {
+      '1': {
+        idx: '01',
+        badgeTag: 'BESPOKE VILLA',
+        categoryLabel: 'PRIVATE VILLA ARCHITECTURE',
+        scale: '5,400 Sq.Ft • Cantt Road, Guna',
+        title: 'The Arboreal Canopy Residence',
+        narrative: 'An extraordinary exploration of organic architectural integration: custom fluted ceiling timber joinery branching seamlessly from the headwall into a backlit sculptural canopy, framing natural sunrise light through floor-to-ceiling panoramic glass apertures.',
+        location: 'Cantt Road, Guna (M.P.)',
+        area: '5,400 Sq.Ft Duplex Villa',
+        rcc: 'M30 Seismic-Resistant RCC Framing',
+        materials: 'Solid White Oak, Italian Travertine, 2700K Warm Cove',
+        timeline: '14 Months (Turnkey Delivery)',
+        img: 'assets/project1.jpg',
+        waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Arboreal Canopy Residence design.'
+      },
+      '2': {
+        idx: '02',
+        badgeTag: 'ROYAL HERITAGE',
+        categoryLabel: 'ROYAL HERITAGE LIVING',
+        scale: '12,000 Sq.Ft • Civil Lines, Guna',
+        title: 'The Imperial Sovereign Hall',
+        narrative: 'Classical coffered teakwood ceiling architecture featuring delicate hand-gilded 24K gold filigree accents, crystal chandelier suspension wells, and seamless Italian Statuario marble floors crafted for regal family receptions and timeless grandeur.',
+        location: 'Civil Lines, Guna (M.P.)',
+        area: '12,000 Sq.Ft Heritage Estate',
+        rcc: 'Heavy-Span Columnless Post-Tensioned Slabs',
+        materials: 'Burmese Teakwood, 24K Gold Filigree, Statuario Marble',
+        timeline: '18 Months (Turnkey Delivery)',
+        img: 'assets/project2.jpg',
+        waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Imperial Sovereign Hall design.'
+      },
+      '3': {
+        idx: '03',
+        badgeTag: 'PARAMETRIC BIOMIMETIC',
+        categoryLabel: 'BIOMIMETIC ARCHITECTURE',
+        scale: '4,200 Sq.Ft • Mayur Van, Guna',
+        title: 'The Parametric Limestone Cavern',
+        narrative: 'Avant-garde parametric cellular ceiling with sculpted natural skylight apertures, acoustic micro-plaster, and hidden linear edge backlights creating an awe-inspiring subterranean atmosphere with supreme thermal efficiency.',
+        location: 'Mayur Van, Guna (M.P.)',
+        area: '4,200 Sq.Ft Sculptural Residence',
+        rcc: 'Curvilinear Shotcrete & Cantilever RCC',
+        materials: 'Sculpted Limestone Plaster, Acoustic Baffles, Skylights',
+        timeline: '16 Months (Turnkey Delivery)',
+        img: 'assets/project3.jpg',
+        waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Parametric Limestone Cavern design.'
+      },
+      '4': {
+        idx: '04',
+        badgeTag: 'EARTHEN RELIEF VILLA',
+        categoryLabel: 'EARTHEN RELIEF ARCHITECTURE',
+        scale: '6,800 Sq.Ft • Subhash Nagar, Guna',
+        title: 'The Adobe Sanctuary Villa',
+        narrative: 'Sculptural relief wall with hand-shaped curved adobe alcoves, concealed luminaire channels, and warm tactile earth-stucco finishes evoking timeless tranquility, rooted vernacular masonry, and modern earthy sophistication.',
+        location: 'Subhash Nagar, Guna (M.P.)',
+        area: '6,800 Sq.Ft Sanctuary Villa',
+        rcc: 'Monolithic Thermal Insulated Core',
+        materials: 'Textured Clay Stucco, American Walnut, Raw Bronze',
+        timeline: '15 Months (Turnkey Delivery)',
+        img: 'assets/project4.jpg',
+        waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Adobe Sanctuary Villa design.'
+      },
+      '5': {
+        idx: '05',
+        badgeTag: 'HORIZON PENTHOUSE',
+        categoryLabel: 'HORIZON PENTHOUSE ARCHITECTURE',
+        scale: '8,500 Sq.Ft • A.B. Road Skyline, Guna',
+        title: 'The Monolith Horizon Penthouse',
+        narrative: 'Monolithic raw stone carved sculptural aperture mirror framing the panoramic city skyline with double-height structural glass curtain walls, floating cantilever mezzanine, and seamless cast microcement floors.',
+        location: 'A.B. Road Skyline, Guna (M.P.)',
+        area: '8,500 Sq.Ft Duplex Penthouse',
+        rcc: 'High-Rise Steel & Composite Decking',
+        materials: 'Chiseled Raw Stone, Thermal Low-E Glass, Microcement',
+        timeline: '16 Months (Turnkey Delivery)',
+        img: 'assets/project5.jpg',
+        waText: 'Hello Er. Arpit, I am inquiring regarding specifications for The Monolith Horizon Penthouse design.'
+      }
+    };
+
+    // Carousel Navigation
+    function getCardWidth() {
+      const firstVisible = Array.from(cards).find(c => !c.classList.contains('filtered-out'));
+      return firstVisible ? firstVisible.offsetWidth + 28 : 450;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+      });
+    }
+
+    // Scroll tracker to update current index
+    let scrollTimeout;
+    track.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const visibleCards = Array.from(cards).filter(c => !c.classList.contains('filtered-out'));
+        if (!visibleCards.length || !currentIdxEl) return;
+
+        const trackLeft = track.getBoundingClientRect().left;
+        let closestCard = visibleCards[0];
+        let closestDist = Infinity;
+
+        visibleCards.forEach(card => {
+          const cardLeft = card.getBoundingClientRect().left;
+          const dist = Math.abs(cardLeft - trackLeft);
+          if (dist < closestDist) {
+            closestDist = dist;
+            closestCard = card;
+          }
+        });
+
+        const id = closestCard.getAttribute('data-id');
+        if (id) {
+          currentIdxEl.textContent = String(id).padStart(2, '0');
+        }
+      }, 60);
+    }, { passive: true });
+
+    // Category Filter Pills
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const filter = pill.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.classList.remove('filtered-out');
+          } else {
+            card.classList.add('filtered-out');
+          }
+        });
+
+        // Reset scroll position and counter
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+        const visibleCards = Array.from(cards).filter(c => !c.classList.contains('filtered-out'));
+        if (visibleCards.length && currentIdxEl) {
+          const firstId = visibleCards[0].getAttribute('data-id');
+          currentIdxEl.textContent = String(firstId).padStart(2, '0');
+        }
+      });
+    });
+
+    // Dossier Modal Openers
+    function openDossier(id) {
+      const data = projectsData[id];
+      if (!data || !modal) return;
+
+      const imgEl = document.getElementById('modal-project-image');
+      const tagEl = document.getElementById('modal-project-tag');
+      const scaleEl = document.getElementById('modal-project-scale');
+      const idxEl = document.getElementById('modal-project-idx');
+      const catEl = document.getElementById('modal-project-category');
+      const titleEl = document.getElementById('modal-project-title');
+      const narrativeEl = document.getElementById('modal-project-narrative');
+      const locEl = document.getElementById('modal-spec-location');
+      const areaEl = document.getElementById('modal-spec-area');
+      const rccEl = document.getElementById('modal-spec-rcc');
+      const matEl = document.getElementById('modal-spec-materials');
+      const timeEl = document.getElementById('modal-spec-timeline');
+      const waBtn = document.getElementById('modal-wa-cta-btn');
+
+      if (imgEl) { imgEl.src = data.img; imgEl.alt = data.title; }
+      if (tagEl) tagEl.textContent = data.badgeTag;
+      if (scaleEl) scaleEl.textContent = data.scale;
+      if (idxEl) idxEl.textContent = data.idx;
+      if (catEl) catEl.textContent = data.categoryLabel;
+      if (titleEl) titleEl.textContent = data.title;
+      if (narrativeEl) narrativeEl.textContent = data.narrative;
+      if (locEl) locEl.textContent = data.location;
+      if (areaEl) areaEl.textContent = data.area;
+      if (rccEl) rccEl.textContent = data.rcc;
+      if (matEl) matEl.textContent = data.materials;
+      if (timeEl) timeEl.textContent = data.timeline;
+      if (waBtn) {
+        waBtn.href = `https://wa.me/917879531920?text=${encodeURIComponent(data.waText)}`;
+      }
+
+      if (typeof modal.showModal === 'function') {
+        modal.showModal();
+      } else {
+        modal.setAttribute('open', '');
+      }
+    }
+
+    // Attach inspect click handlers
+    document.querySelectorAll('.btn-card-inspect, .btn-inspect-pill, .card-media-wrapper').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = btn.closest('.project-exhibition-card');
+        if (!card) return;
+        const id = card.getAttribute('data-id');
+        if (id) openDossier(id);
+      });
+    });
+
+    // Close Modal Handlers
+    if (modalCloseBtn && modal) {
+      modalCloseBtn.addEventListener('click', () => {
+        if (typeof modal.close === 'function') modal.close();
+        else modal.removeAttribute('open');
+      });
+    }
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          if (typeof modal.close === 'function') modal.close();
+          else modal.removeAttribute('open');
+        }
+      });
+    }
+  }
+
   // Initialize all subsystems
   window.addEventListener('resize', resizeCanvas, { passive: true });
   window.addEventListener('scroll', () => {
@@ -445,4 +679,5 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
   initInquiryForm();
   initQuickWhatsAppButtons();
   init3DReveal();
+  initProjectsShowcase();
 })();
