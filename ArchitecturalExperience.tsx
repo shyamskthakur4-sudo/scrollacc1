@@ -37,7 +37,7 @@ interface ExhibitionProject {
   categoryLabel: string;
   title: string;
   narrative: string;
-  location: string;
+  scope: string;
   area: string;
   rcc: string;
   materials: string[];
@@ -53,10 +53,10 @@ const EXHIBITION_PROJECTS: ExhibitionProject[] = [
     category: 'villas',
     badgeTag: 'BESPOKE VILLA',
     categoryLabel: 'PRIVATE VILLA ARCHITECTURE',
-    scale: '5,400 Sq.Ft • Cantt Road, Guna',
+    scale: '5,400 Sq.Ft',
     title: 'The Arboreal Canopy Residence',
     narrative: 'Hand-sculpted solid white oak ceiling integration with 2700K ambient cove illumination and seamless panoramic glass terrace apertures.',
-    location: 'Cantt Road, Guna (M.P.)',
+    scope: 'Turnkey Architectural Execution',
     area: '5,400 Sq.Ft Duplex Villa',
     rcc: 'M30 Seismic-Resistant RCC Framing',
     materials: ['White Oak', '2700K Cove Lighting', 'Italian Travertine'],
@@ -70,10 +70,10 @@ const EXHIBITION_PROJECTS: ExhibitionProject[] = [
     category: 'royal',
     badgeTag: 'ROYAL HERITAGE',
     categoryLabel: 'ROYAL HERITAGE LIVING',
-    scale: '12,000 Sq.Ft • Civil Lines, Guna',
+    scale: '12,000 Sq.Ft',
     title: 'The Imperial Sovereign Hall',
     narrative: 'Classical coffered teakwood ceiling with gold filigree accents, crystal chandelier suspension, and mirror-polished Italian Statuario marble.',
-    location: 'Civil Lines, Guna (M.P.)',
+    scope: 'Heritage Architecture & Interior Turnkey',
     area: '12,000 Sq.Ft Heritage Estate',
     rcc: 'Heavy-Span Columnless Post-Tensioned Slabs',
     materials: ['Burmese Teak', '24K Gold Filigree', 'Statuario Marble'],
@@ -87,10 +87,10 @@ const EXHIBITION_PROJECTS: ExhibitionProject[] = [
     category: 'sculptural',
     badgeTag: 'PARAMETRIC BIOMIMETIC',
     categoryLabel: 'BIOMIMETIC ARCHITECTURE',
-    scale: '4,200 Sq.Ft • Mayur Van, Guna',
+    scale: '4,200 Sq.Ft',
     title: 'The Parametric Limestone Cavern',
     narrative: 'Avant-garde parametric cellular ceiling with sculpted natural skylight apertures, acoustic micro-plaster, and hidden linear edge backlights.',
-    location: 'Mayur Van, Guna (M.P.)',
+    scope: 'Biomimetic Design & Curvilinear RCC',
     area: '4,200 Sq.Ft Sculptural Residence',
     rcc: 'Curvilinear Shotcrete & Cantilever RCC',
     materials: ['Limestone Plaster', 'Acoustic Baffles', 'Indirect Skylights'],
@@ -104,10 +104,10 @@ const EXHIBITION_PROJECTS: ExhibitionProject[] = [
     category: 'sculptural',
     badgeTag: 'EARTHEN RELIEF VILLA',
     categoryLabel: 'EARTHEN RELIEF ARCHITECTURE',
-    scale: '6,800 Sq.Ft • Subhash Nagar, Guna',
+    scale: '6,800 Sq.Ft',
     title: 'The Adobe Sanctuary Villa',
     narrative: 'Sculptural relief wall with hand-shaped curved adobe alcoves, concealed luminaire channels, and warm tactile earth-stucco finishes.',
-    location: 'Subhash Nagar, Guna (M.P.)',
+    scope: 'Earthen Vernacular & Modern Stucco',
     area: '6,800 Sq.Ft Sanctuary Villa',
     rcc: 'Monolithic Thermal Insulated Core',
     materials: ['Textured Clay Stucco', 'Walnut Millwork', 'Bronze Sconces'],
@@ -121,10 +121,10 @@ const EXHIBITION_PROJECTS: ExhibitionProject[] = [
     category: 'penthouse',
     badgeTag: 'HORIZON PENTHOUSE',
     categoryLabel: 'HORIZON PENTHOUSE ARCHITECTURE',
-    scale: '8,500 Sq.Ft • A.B. Road Skyline, Guna',
+    scale: '8,500 Sq.Ft',
     title: 'The Monolith Horizon Penthouse',
     narrative: 'Monolithic raw stone carved sculptural aperture mirror framing the panoramic city skyline with double-height structural glass curtain walls.',
-    location: 'A.B. Road Skyline, Guna (M.P.)',
+    scope: 'Structural Steel & Monolithic Stone',
     area: '8,500 Sq.Ft Duplex Penthouse',
     rcc: 'High-Rise Steel & Composite Decking',
     materials: ['Chiseled Raw Stone', 'Thermal Low-E Glass', 'Cast Microcement'],
@@ -736,19 +736,19 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
                   {[
                     {
                       tag: 'LUXURY RESIDENCE',
-                      scale: '4,800 Sq.Ft • Cantt Road, Guna',
+                      scale: '4,800 Sq.Ft',
                       title: 'The Glass Horizon Villa',
                       desc: 'Two-story contemporary private residence with double-height panoramic glass facade, integrated light court, and custom climate-responsive louvers.',
                     },
                     {
                       tag: 'COMMERCIAL TOWER',
-                      scale: '12,000 Sq.Ft • A.B. Road, Guna',
+                      scale: '12,000 Sq.Ft',
                       title: 'Arpit Central Commercial Complex',
                       desc: 'Four-story flagship commercial development featuring post-tensioned wide span slab framing, thermal reflective glass facade, and high-speed elevator wells.',
                     },
                     {
                       tag: 'PREMIUM DUPLEX',
-                      scale: '3,200 Sq.Ft • Shubham Colony, Guna',
+                      scale: '3,200 Sq.Ft',
                       title: 'The Royal Orchid Residences',
                       desc: 'Harmonious fusion of natural Burmese teak cladding, cantilevered private balconies, and book-matched imported Statuario marble flooring.',
                     },
@@ -863,7 +863,7 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
                       type="text"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      placeholder="e.g. Cantt Road, Guna / Nearby"
+                      placeholder="e.g. City / Plot Location"
                       className="w-full px-3 py-2 bg-white border border-black/10 rounded-xl text-xs sm:text-sm text-[#111111] focus:outline-none focus:ring-2 focus:ring-black/10"
                     />
                   </div>
@@ -1049,7 +1049,6 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
                 <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-center justify-between text-[11px] mb-2 font-medium">
                     <span className="font-bold text-[#B38F48]">{project.idx} / {project.badgeTag}</span>
-                    <span className="text-[#8E8E93]">{project.location.split('(')[0].trim()}</span>
                   </div>
                   <h3 className="font-serif text-lg font-bold text-[#111111] group-hover:text-[#8C6D3B] transition-colors leading-snug mb-2">
                     {project.title}
@@ -1152,8 +1151,8 @@ _Dispatched via arpitconstruction.com Editorial Suite_`;
               {/* Specs Matrix */}
               <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-[#FAF9F6] border border-black/10 mb-6">
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#8E8E93] block">Location</span>
-                  <strong className="text-xs font-bold text-[#111111]">{activeModalProject.location}</strong>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#8E8E93] block">Project Scope</span>
+                  <strong className="text-xs font-bold text-[#111111]">{activeModalProject.scope}</strong>
                 </div>
                 <div>
                   <span className="text-[10px] uppercase font-bold tracking-wider text-[#8E8E93] block">Built-Up Area</span>

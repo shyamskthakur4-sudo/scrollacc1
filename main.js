@@ -445,10 +445,10 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
         idx: '01',
         badgeTag: 'BESPOKE VILLA',
         categoryLabel: 'PRIVATE VILLA ARCHITECTURE',
-        scale: '5,400 Sq.Ft • Cantt Road, Guna',
+        scale: '5,400 Sq.Ft',
         title: 'The Arboreal Canopy Residence',
         narrative: 'An extraordinary exploration of organic architectural integration: custom fluted ceiling timber joinery branching seamlessly from the headwall into a backlit sculptural canopy, framing natural sunrise light through floor-to-ceiling panoramic glass apertures.',
-        location: 'Cantt Road, Guna (M.P.)',
+        scope: 'Turnkey Architectural Execution',
         area: '5,400 Sq.Ft Duplex Villa',
         rcc: 'M30 Seismic-Resistant RCC Framing',
         materials: 'Solid White Oak, Italian Travertine, 2700K Warm Cove',
@@ -460,10 +460,10 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
         idx: '02',
         badgeTag: 'ROYAL HERITAGE',
         categoryLabel: 'ROYAL HERITAGE LIVING',
-        scale: '12,000 Sq.Ft • Civil Lines, Guna',
+        scale: '12,000 Sq.Ft',
         title: 'The Imperial Sovereign Hall',
         narrative: 'Classical coffered teakwood ceiling architecture featuring delicate hand-gilded 24K gold filigree accents, crystal chandelier suspension wells, and seamless Italian Statuario marble floors crafted for regal family receptions and timeless grandeur.',
-        location: 'Civil Lines, Guna (M.P.)',
+        scope: 'Heritage Architecture & Interior Turnkey',
         area: '12,000 Sq.Ft Heritage Estate',
         rcc: 'Heavy-Span Columnless Post-Tensioned Slabs',
         materials: 'Burmese Teakwood, 24K Gold Filigree, Statuario Marble',
@@ -475,10 +475,10 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
         idx: '03',
         badgeTag: 'PARAMETRIC BIOMIMETIC',
         categoryLabel: 'BIOMIMETIC ARCHITECTURE',
-        scale: '4,200 Sq.Ft • Mayur Van, Guna',
+        scale: '4,200 Sq.Ft',
         title: 'The Parametric Limestone Cavern',
         narrative: 'Avant-garde parametric cellular ceiling with sculpted natural skylight apertures, acoustic micro-plaster, and hidden linear edge backlights creating an awe-inspiring subterranean atmosphere with supreme thermal efficiency.',
-        location: 'Mayur Van, Guna (M.P.)',
+        scope: 'Biomimetic Design & Curvilinear RCC',
         area: '4,200 Sq.Ft Sculptural Residence',
         rcc: 'Curvilinear Shotcrete & Cantilever RCC',
         materials: 'Sculpted Limestone Plaster, Acoustic Baffles, Skylights',
@@ -490,10 +490,10 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
         idx: '04',
         badgeTag: 'EARTHEN RELIEF VILLA',
         categoryLabel: 'EARTHEN RELIEF ARCHITECTURE',
-        scale: '6,800 Sq.Ft • Subhash Nagar, Guna',
+        scale: '6,800 Sq.Ft',
         title: 'The Adobe Sanctuary Villa',
         narrative: 'Sculptural relief wall with hand-shaped curved adobe alcoves, concealed luminaire channels, and warm tactile earth-stucco finishes evoking timeless tranquility, rooted vernacular masonry, and modern earthy sophistication.',
-        location: 'Subhash Nagar, Guna (M.P.)',
+        scope: 'Earthen Vernacular & Modern Stucco',
         area: '6,800 Sq.Ft Sanctuary Villa',
         rcc: 'Monolithic Thermal Insulated Core',
         materials: 'Textured Clay Stucco, American Walnut, Raw Bronze',
@@ -505,10 +505,10 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
         idx: '05',
         badgeTag: 'HORIZON PENTHOUSE',
         categoryLabel: 'HORIZON PENTHOUSE ARCHITECTURE',
-        scale: '8,500 Sq.Ft • A.B. Road Skyline, Guna',
+        scale: '8,500 Sq.Ft',
         title: 'The Monolith Horizon Penthouse',
         narrative: 'Monolithic raw stone carved sculptural aperture mirror framing the panoramic city skyline with double-height structural glass curtain walls, floating cantilever mezzanine, and seamless cast microcement floors.',
-        location: 'A.B. Road Skyline, Guna (M.P.)',
+        scope: 'Structural Steel & Monolithic Stone',
         area: '8,500 Sq.Ft Duplex Penthouse',
         rcc: 'High-Rise Steel & Composite Decking',
         materials: 'Chiseled Raw Stone, Thermal Low-E Glass, Microcement',
@@ -603,7 +603,7 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
       const catEl = document.getElementById('modal-project-category');
       const titleEl = document.getElementById('modal-project-title');
       const narrativeEl = document.getElementById('modal-project-narrative');
-      const locEl = document.getElementById('modal-spec-location');
+      const scopeEl = document.getElementById('modal-spec-scope');
       const areaEl = document.getElementById('modal-spec-area');
       const rccEl = document.getElementById('modal-spec-rcc');
       const matEl = document.getElementById('modal-spec-materials');
@@ -617,7 +617,7 @@ _Sent via arpitconstruction.com Inquiry Portal_`;
       if (catEl) catEl.textContent = data.categoryLabel;
       if (titleEl) titleEl.textContent = data.title;
       if (narrativeEl) narrativeEl.textContent = data.narrative;
-      if (locEl) locEl.textContent = data.location;
+      if (scopeEl) scopeEl.textContent = data.scope;
       if (areaEl) areaEl.textContent = data.area;
       if (rccEl) rccEl.textContent = data.rcc;
       if (matEl) matEl.textContent = data.materials;
