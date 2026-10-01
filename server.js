@@ -16,6 +16,8 @@ const MIME_TYPES = {
   '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
 };
 
 function serveFile(req, res) {

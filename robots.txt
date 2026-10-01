@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Prevent indexing of backup files and frame archive
+Disallow: /*.zip$
+Disallow: /node_modules/
+
+# Google Search Console Sitemap
+Sitemap: https://arpitconstruction.com/sitemap.xml
